@@ -9,7 +9,7 @@
 <!--
 
 version:       0.1.0
-last modified: 14.08.12
+last modified: 12.09.12
 
 
           ++  RDSvis  ++
@@ -45,8 +45,12 @@ RDSvis
 
 <body>
 
+
+<!-- container (start) -->
 <div id="container">
 
+
+<!-- left-container (start) -->
 <div id="left-container">
 
 <div class="text">
@@ -69,7 +73,7 @@ To visualize the RDS data, please submit the following info:
 </div>
 
 <form name="form1">
-RDS data set: <input type="file" id="filename" />
+RDS data set: <input type="file" id="files" name="file" />
 <br/>
 sample size: <input type="text" id="no_rows" />
 <br/>
@@ -80,14 +84,21 @@ max. number of coupons given to each respondent: <input type="text" id="no_c" />
 <input type="button" onclick="processData(document)" value="submit data" />
 </form>
 
-<div id="id-list"></div>
-
 </div>
+<!-- left-container (end) -->
 
+
+<!-- center-container (start) -->
 <div id="center-container">
-    <div id="infovis"></div>    
-</div>
 
+<div id="infovis">
+</div>    
+
+</div>
+<!-- center-container (end)-->
+
+
+<!-- right-container (start) -->
 <div id="right-container">
 
 <h4>Tree Orientation</h4>
@@ -147,8 +158,18 @@ max. number of coupons given to each respondent: <input type="text" id="no_c" />
 </table>
 
 </div>
+<!-- right-container (end) -->
 
+<!-- set of elements (start) -->
+
+<div id="rds_data"></div>
 <div id="log"></div>
+
+<!-- set of elements (end) -->
+
 </div>
+<!-- container (end) -->
+
 </body>
+
 </html>
