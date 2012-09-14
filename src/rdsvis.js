@@ -1,8 +1,7 @@
 
-
 //
-// version:       0.1.0
-// last modified: 14.08.12
+// version:       0.2.0
+// last modified: 14.09.12
 //
 //
 //          ++  RDSvis  ++
@@ -16,7 +15,6 @@
 //
 // The application uses two libraries:
 //   - "JavaScript InfoVis Toolkit (JIT)" (http://thejit.org/)
-//   - "php.js" (http://phpjs.org/)
 //
 
 
