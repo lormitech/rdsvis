@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>RDSvis [vers. 0.1.0]</title>
+
+<!-- -->
+
+<!--
+
+version:       0.1.0
+last modified: 14.08.12
+
+
+          ++  RDSvis  ++
+		  
+A web application to visualise RDS data
+
+
+-->
+ 
+<!--
+CSS files
+-->
+<link type="text/css" href="../src/base.css" rel="stylesheet" />
+<link type="text/css" href="../src/rdsvis.css" rel="stylesheet" />
+
+<!--
+JIT Library
+http://thejit.org/
+-->
+<script language="javascript" type="text/javascript" src="../src/jit/jit.js"></script>
+
+<!--
+RDSvis
+-->
+<script language="javascript" type="text/javascript" src="../src/rdsvis.js"></script>
+<script language="javascript" type="text/javascript" src="../src/io_processing.js"></script>
+<script language="javascript" type="text/javascript" src="../src/data_processing.js"></script>
+<script language="javascript" type="text/javascript" src="../src/logging.js"></script>
+</head>
+
+<!-- -->
+
+
+<body>
+
+<div id="container">
+
+<div id="left-container">
+
+<div class="text">
+<h4>
+RDSvis [vers. 0.1.0]  
+</h4>
+
+After submission,the RDS data are converted in a tree structure.
+<br/><br/>
+Click on a node to select it.
+<br/><br/>
+You can select the <b>tree orientation</b> or change the <b>selection mode</b> in the right column.
+<br/><br/>
+To move the tree, drag and drop it.
+<br/><br/>
+The color of a node depends on the number of children.
+<br/><br/><br/>
+To visualize the RDS data, please submit the following info:
+<br/>  
+</div>
+
+<form name="form1">
+RDS data set: <input type="file" id="filename" />
+<br/>
+sample size: <input type="text" id="no_rows" />
+<br/>
+number of columns: <input type="text" id="no_cols" />
+<br/>
+max. number of coupons given to each respondent: <input type="text" id="no_c" />
+<br/>
+<input type="button" onclick="processData(document)" value="submit data" />
+</form>
+
+<div id="id-list"></div>
+
+</div>
+
+<div id="center-container">
+    <div id="infovis"></div>    
+</div>
+
+<div id="right-container">
+
+<h4>Tree Orientation</h4>
+<table>
+    <tr>
+        <td>
+            <label for="r-left">Left </label>
+        </td>
+        <td>
+            <input type="radio" id="r-left" name="orientation" checked="checked" value="left" />
+        </td>
+    </tr>
+    <tr>
+         <td>
+            <label for="r-top">Top </label>
+         </td>
+         <td>
+            <input type="radio" id="r-top" name="orientation" value="top" />
+         </td>
+    </tr>
+    <tr>
+         <td>
+            <label for="r-bottom">Bottom </label>
+          </td>
+          <td>
+            <input type="radio" id="r-bottom" name="orientation" value="bottom" />
+          </td>
+    </tr>
+    <tr>
+          <td>
+            <label for="r-right">Right </label>
+          </td> 
+          <td> 
+           <input type="radio" id="r-right" name="orientation" value="right" />
+          </td>
+    </tr>
+</table>
+
+<h4>Selection Mode</h4>
+<table>
+    <tr>
+        <td>
+            <label for="s-normal">Normal </label>
+        </td>
+        <td>
+            <input type="radio" id="s-normal" name="selection" checked="checked" value="normal" />
+        </td>
+    </tr>
+    <tr>
+         <td>
+            <label for="s-root">Set as Root </label>
+         </td>
+         <td>
+            <input type="radio" id="s-root" name="selection" value="root" />
+         </td>
+    </tr>
+</table>
+
+</div>
+
+<div id="log"></div>
+</div>
+</body>
+</html>

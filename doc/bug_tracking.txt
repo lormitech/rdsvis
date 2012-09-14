@@ -1,0 +1,21 @@
+
+
+#--
+
+-- template --
+
+ID:                 [yymmdd]
+Status:             [open, resolved]
+Priority:           [low, normal, high]
+Description:        […]
+Platform, OS:       […]
+Version:            [RDSvis vers.]
+Reported:           [dd.mm.yy]
+Reported by:        [user_name or developer_name]
+Assigned To:        [developer_name]
+Fixed:              [dd.mm.yy]
+Fixed in Version:   [RDSvis vers.]
+
+
+
+#--
