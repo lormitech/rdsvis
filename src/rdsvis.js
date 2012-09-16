@@ -13,7 +13,7 @@
 //--
 
 //
-// The application uses two libraries:
+// The application uses the library:
 //   - "JavaScript InfoVis Toolkit (JIT)" (http://thejit.org/)
 //
 
@@ -79,14 +79,14 @@ function concatenationTest(stree, stree_ref) {
   // concatenation test on them ...
   if (stree.children != 0) {
     for (var k=0; k<stree.children.length; k++) {	
- 	  concat_out_c = concatenationTest(stree.children[k], stree_ref);
-	  if (concat_out_c[1] == 1) {
-	    stree.children[k] = concat_out_c[0];
-		concat_out[0] = stree; 
-		concat_out[1] = concat_out_c[1];
-		return(concat_out);
+      concat_out_c = concatenationTest(stree.children[k], stree_ref);
+      if (concat_out_c[1] == 1) {
+        stree.children[k] = concat_out_c[0];
+        concat_out[0] = stree; 
+        concat_out[1] = concat_out_c[1];
+        return(concat_out);
       }
-	}
+    }
   }
  
   // concatenation test
@@ -94,9 +94,9 @@ function concatenationTest(stree, stree_ref) {
     for (var k=0; k<stree_ref.children.length; k++) {
       stree.addChild(stree_ref.children[k]);
     }	
-	concat_out[0] = stree;
+    concat_out[0] = stree;
     concat_out[1] = 1;	   
-	return(concat_out);
+    return(concat_out);
   }
 	 
   return(concat_out);
@@ -117,18 +117,18 @@ function concatenateJSONSubTrees(strees_json) {
 	
   for (var i=0; i<strees_json_t.length; i++) {
     for (var j=0; j<strees_json.length; j++) {
-	  for (var k=0; k<strees_json[j].children.length; k++) {
-	    // concatenation test
-	    concat_out = concatenationTest(strees_json[j].children[k], strees_json_t[i]);
-	    if (concat_out[1] == 1) { 		
-    	  strees_json[j].children[k] = concat_out[0];
-		  // shrinking the array
-		  strees_json.splice((i - sc), 1);
-		  sc = sc + 1;  
-		  break;
+      for (var k=0; k<strees_json[j].children.length; k++) {
+        // concatenation test
+	concat_out = concatenationTest(strees_json[j].children[k], strees_json_t[i]);
+        if (concat_out[1] == 1) { 		
+          strees_json[j].children[k] = concat_out[0];
+          // shrinking the array
+          strees_json.splice((i - sc), 1);
+          sc = sc + 1;  
+          break;
         }
       }
-	  if (concat_out[1] == 1) break;
+      if (concat_out[1] == 1) break;
     }
   }
   
@@ -144,11 +144,8 @@ function generateJSONSubTrees(node_pairs, rds_data) {
   var strees_json = new Array();
   
   var pa = getParents(node_pairs);
-  //alert(pa);
   pa = pa.sort(function(a,b){return a-b});
-  //alert(pa);
   pa_u = pa.unique();
-  //alert(pa_u);
    
   for (var ip=0; ip<pa_u.length; ip++) {
 
@@ -160,25 +157,25 @@ function generateJSONSubTrees(node_pairs, rds_data) {
     start = 0;
     while (idx_t != -1) {
       idx_t = node_pairs.indexOf(pa_u[ip], start);
-	  if ((idx_t != -1) && (idx_t%2 == 0)) {
-	    idx_p = idx_t;
-	    start = idx_t + 1;
+      if ((idx_t != -1) && (idx_t%2 == 0)) {
+        idx_p = idx_t;
+        start = idx_t + 1;
         idx_c = idx_p + 1;
-	    idxs_c.push(idx_c);
-	    no_strees_c = no_strees_c + 1;
-	  }
-	  if (idx_t%2 != 0) start = idx_t + 1;
+        idxs_c.push(idx_c);
+        no_strees_c = no_strees_c + 1;
+      }
+      if (idx_t%2 != 0) start = idx_t + 1;
     }
  	   	
     // parent
-	var stree_p = {};
+    var stree_p = {};
     tree_json.call(stree_p, node_pairs[idx_p], rds_data[node_pairs[idx_p]][0], {}, []);
-	// children
+    // children
     for (var ic=0; ic<no_strees_c; ic++) {
       var stree_c = {};
       tree_json.call(stree_c, node_pairs[idxs_c[ic]], rds_data[node_pairs[idxs_c[ic]]][0], {}, []);
       stree_p.addChild(stree_c);
-	}
+    }
     strees_json.push(stree_p);
 	
   }
@@ -225,7 +222,7 @@ function getNodes(node_pairs) {
 
 // function to get the node pairs of the tree;
 // note that ...
-//   a) each node pair share the same coupon ID;
+//   a) each node pair shares the same coupon ID;
 //   b) each node is identified by `id2' (the position,
 //      i.e. row number, in the original RDS data set);
 function getNodePairs(id_cfromrecr, id_ctoresp, no_rows, no_cols) {
@@ -237,10 +234,10 @@ function getNodePairs(id_cfromrecr, id_ctoresp, no_rows, no_cols) {
     for (var ir=0; ir<no_rows; ir++) {
       idx_t = id_ctoresp[ir].indexOf(id_cfromrecr[j]);
       if (idx_t != -1) {
-	    // note that both `ir' and `j' coincide with `id2'
+        // note that both `ir' and `j' coincide with `id2'
         node_pairs.push(ir);
         node_pairs.push(j);
-	  }
+      }
     }
   }
   
@@ -277,7 +274,7 @@ function processData(document){
     for (var ic=0; ic<no_c; ic++) {
       data_row [ic] = rds_data[ir][(3+ic)];
     }
-	id_ctoresp[ir] = data_row;
+    id_ctoresp[ir] = data_row;
   }
  
   // node pairs of the tree; each node is identified by `id2';
@@ -341,7 +338,7 @@ function processData(document){
         if(normal.checked) {
           st.onClick(node.id);
         }
-		else {
+        else {
           st.setRoot(node.id, 'animate');
         }
       };
