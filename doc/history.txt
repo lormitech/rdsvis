@@ -1,5 +1,17 @@
 
-RDSvis - history file
+++ RDSvis - history file ++
+
+
+
+[16.09.12]
+tag vers_0_2_0
+
+[14.09.12]
+changed the procedure for the I/O processing;
+
+
+
+-----
 
 program name: RDSvis
 
