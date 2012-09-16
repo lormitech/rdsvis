@@ -21,9 +21,9 @@ function from1DArrayto2DArray(data_1da, no_rows, no_cols) {
     var data_row = new Array(no_cols);
     for (var ic=0; ic<no_cols; ic++) {
       data_row[ic] = data_1da[iel];
-	  iel++;
+      iel++;
     }
-	data_2da[ir] = data_row;
+    data_2da[ir] = data_row;
   }
 
   return(data_2da);
