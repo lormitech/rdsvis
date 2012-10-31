@@ -1,24 +1,28 @@
 
-
-function readerHandler(event) {
+// function to store the data
+function storeData_Handler(event) {
  
-  // content of the input file
-  var rds_data = event.target.result;
-
-  document.getElementById("rds_data").value = rds_data;
+  // content of the input file (RDS data)
+  var rds_in = event.target.result;
+  // storing data into a data structure
+  document.getElementById("rds_data").value = rds_in;
 
 }
 
 
-// function to read and process the input data
-function fromInput(document) {
+// function to read the input file
+function readData() {
 
-  // asynchronously reading the input file and storing
-  // the data in memory
   var filename = document.getElementById("files").files[0];
-  var fr = new FileReader();
-  fr.readAsText(filename);
-  fr.onload = readerHandler;
+  var freader = new FileReader();
+  freader.readAsText(filename);
+  freader.onload = storeData_Handler;
+
+}
+
+
+// function to process the input data
+function fromInput() {
 
   // RDS data (string)
   var rds_data_s = document.getElementById("rds_data").value;
