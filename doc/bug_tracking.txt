@@ -19,3 +19,28 @@ Fixed in Version:   [RDSvis vers.]
 
 
 #--
+
+
+ID:                 121031
+Status:             resolved
+Priority:           high
+Description:        the procedure for the I/O processing is wrong
+Platform, OS:       Linux, Windows
+Version:            RDSvis vers. 0.2.0
+Reported:           30.10.12
+Reported by:        lm
+Assigned To:        lm
+Fixed:              30.10.12
+Fixed in Version:   RDSvis vers. 0.3.0
+
+ID:                 [yymmdd]
+Status:             open
+Priority:           high
+Description:        the procedure for the I/O processing is wrong
+Platform, OS:       Linux, Windows
+Version:            RDSvis vers. 0.2.0
+Reported:           30.10.12
+Reported by:        lm
+Assigned To:        lm
+Fixed:              [dd.mm.yy]
+Fixed in Version:   [RDSvis vers.]
