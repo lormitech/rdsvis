@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>RDSvis [vers. 0.2.0]</title>
+<title>RDSvis [vers. 0.3.0]</title>
 
 <!-- -->
 
 <!--
 
-version:       0.2.0
-last modified: 14.09.12
+version:       0.3.0
+last modified: 31.10.12
 
 
           ++  RDSvis  ++
@@ -35,6 +35,7 @@ http://thejit.org/
 RDSvis
 -->
 <script language="javascript" type="text/javascript" src="../src/rdsvis.js"></script>
+<script language="javascript" type="text/javascript" src="../src/rds_json.js"></script>
 <script language="javascript" type="text/javascript" src="../src/io_processing.js"></script>
 <script language="javascript" type="text/javascript" src="../src/data_processing.js"></script>
 <script language="javascript" type="text/javascript" src="../src/logging.js"></script>
@@ -55,7 +56,7 @@ RDSvis
 
 <div class="text">
 <h4>
-RDSvis [vers. 0.2.0]  
+RDSvis [vers. 0.3.0]  
 </h4>
 
 After submission,the RDS data are converted in a tree structure.
@@ -81,7 +82,9 @@ number of columns: <input type="text" id="no_cols" />
 <br/>
 max. number of coupons given to each respondent: <input type="text" id="no_c" />
 <br/>
-<input type="button" onclick="processData(document)" value="submit data" />
+<input type="button" onclick="readData()" value="submit data" />
+<br/>
+<input type="button" onclick="generateRDSTree()" value="generate RDS tree" />
 </form>
 
 </div>
