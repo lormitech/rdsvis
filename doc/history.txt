@@ -3,6 +3,12 @@
 
 
 
+[31.10.12]
+tag vers_0_3_0
+
+[31.10.12]
+fixed bug (#121031): the procedure for the I/O processing was wrong;
+
 [16.09.12]
 tag vers_0_2_0
 
